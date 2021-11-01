@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Voikko test</title>
+  </head>
+  <body>
+    <script src="libvoikko.js"></script>
+    <script type="module">
+        Libvoikko().then(voikko => {
+            const voi = voikko.init("fi");
+            const ret = voi.analyze("alusta");
+            const baseForms = ret.map(v => v.BASEFORM);
+            console.log(baseForms);
+        } );
+    </script>
+  </body>
+</html>
