@@ -5,14 +5,10 @@
     <title>Voikko test</title>
   </head>
   <body>
-    <script src="libvoikko.js"></script>
-    <script type="module">
-        Libvoikko().then(voikko => {
-            const voi = voikko.init("fi");
-            const ret = voi.analyze("alusta");
-            const baseForms = ret.map(v => v.BASEFORM);
-            console.log(baseForms);
-        } );
+    <script src="fijp_Glosbe.js"></script>
+    <script>
+        var con = new fijp_Glosbe();
+        con.findTerm("alusta").then(res => console.log(res));
     </script>
   </body>
 </html>
